@@ -1,12 +1,11 @@
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 
 CREATE TABLE Books (
-    book_id  int,
+    book_id  int Primary Key ,
     title VARCHAR(130),
     author_id int Foreign Key ,
     price FLOAT,
     publication_date DATE,
-    Primary Key (book_id),
     REFERENCES Authors(author_id)
 );
 CREATE TABLE Authors(
