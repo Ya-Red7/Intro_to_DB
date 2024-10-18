@@ -20,15 +20,15 @@ CREATE TABLE Customers(
 );
 CREATE TABLE Orders(
     order_id int PRIMARY KEY ,
-    customer_id int FOREIGN KEY ,
+    customer_id int,
     order_date DATE,
-    REFERENCES Customers(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 CREATE TABLE Order_Details(
     orderdetailid int PRIMARY KEY ,
-    order_id FOREIGN KEY,
-    book_id FOREIGN KEY,
+    order_id INT,
+    book_id INT,
     quantity FLOAT,
-    REFERENCES Orders(order_id),
-    REFERENCES Books(book_id)
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
